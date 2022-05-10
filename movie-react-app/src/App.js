@@ -9,7 +9,7 @@ import Movie from "./pages/Movie";
 import Error404 from "./pages/Error404";
 import NewMovies from "./pages/NewMovies";
 import Popular from "./pages/Popular";
-import Search from "./pages/Search";
+import Search from "./pages/Search/Search";
 
 function App() {
 

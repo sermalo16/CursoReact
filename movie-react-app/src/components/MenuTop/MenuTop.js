@@ -3,8 +3,11 @@ import "./MenuTop.scss";
 import { Menu } from "antd";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/img/logo.svg";
+import { useHistory } from 'react-router-dom';
 
 export default function MenuTop() {
+  const history = useHistory();
+ 
   return (
     <div className="menu-top">
       <div className="menu-top-logo">
@@ -12,19 +15,19 @@ export default function MenuTop() {
       </div>
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]} style={{lineHeight:"64px"}}>
           <Menu.Item key="1">
-              <Link to="/">Home</Link>
+              <a href='/' >Home</a>
           </Menu.Item>
 
           <Menu.Item key="2">
-              <Link to="/new-movies">Ultimos Lanzamientos</Link>
+              <a href='/new-movies'>Ultimos Lanzamientos</a>
           </Menu.Item>
 
           <Menu.Item key="3">
-              <Link to="/popular">Populares</Link>
+              <a href="/popular">Populares</a>
           </Menu.Item>
 
           <Menu.Item key="4">
-              <Link to="/search">Buscador</Link>
+              <a href="/search">Buscador</a>
           </Menu.Item>
       </Menu>
     </div>
