@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Navbar, Nav } from "react-bootstrap";
+import Cart from "../Cart";
 import { ReactComponent as Logo} from "../../assets/images/logo.svg";
 
 
@@ -13,13 +14,12 @@ export default function TopMenu() {
             <BrandNav/>
 
 
-            {/*Menu */}
-            <MenuNav/>
-
+            {/*<MenuNav/>*/}
+            
 
             {/* Carrit */}
+            <Cart/>
           </Container>
-          
       </Navbar>
   )
 }
@@ -27,11 +27,13 @@ export default function TopMenu() {
 
 function BrandNav(){
     return(
+        <>
         <Navbar.Brand>
             <Logo/>
             <h2>La casa de los helados</h2>
         </Navbar.Brand>
-    )
+        </>
+    );
 }
 
 
