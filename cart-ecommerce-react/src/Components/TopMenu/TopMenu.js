@@ -6,7 +6,9 @@ import { ReactComponent as Logo} from "../../assets/images/logo.svg";
 
 import "./TopMenu.scss";
 
-export default function TopMenu() {
+export default function TopMenu(props) {
+    const {productsCart, getProductsCart, products} = props;
+
   return (
       <Navbar bg="dark" variant="dark" className="top-menu">
           <Container>
@@ -18,7 +20,7 @@ export default function TopMenu() {
             
 
             {/* Carrit */}
-            <Cart/>
+            <Cart productsCart={productsCart} getProductsCart={getProductsCart} products={products}/>
           </Container>
       </Navbar>
   )

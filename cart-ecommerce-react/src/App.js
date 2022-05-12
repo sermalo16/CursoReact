@@ -13,6 +13,8 @@ function App() {
   useEffect(() => {
     getProductsCart();
   }, []);
+
+
   const getProductsCart = () => {
     const idsProducts = localStorage.getItem(STORAGE_PRODUCT_CART);
 
@@ -30,12 +32,13 @@ function App() {
     setProductsCart(idsProducts);
 
     localStorage.setItem(STORAGE_PRODUCT_CART, productsCart);
+    getProductsCart();
     toast.success(`${name} agregado al carrito correctamente`);
   }
 
   return (
     <div className="App">
-      <TopMenu/>
+      <TopMenu productsCart={productsCart} getProductsCart={getProductsCart} products={products} />
       <Products products={products} addProductCart={addProductCart}/>
       <ToastContainer
       position="bottom-left"
