@@ -1,0 +1,38 @@
+.add-task {
+    border-top: 1px solid #dadada;
+    display: flex;
+
+    input {
+        border: 0 !important;
+        width: 100%;
+        height: 60px;
+        padding: 20px 50px;
+        font-size: 22px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: 10px;
+        background-color: transparent;
+        border: 0;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        svg {
+            fill: #bdbdbd;
+            width: 20px;
+        }
+    }
+}
