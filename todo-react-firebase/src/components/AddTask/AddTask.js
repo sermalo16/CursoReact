@@ -10,21 +10,27 @@ import "./AddTask.scss";
 
 const db = firebase.firestore(firebase);
 
-export default function AddTask() {
+export default function AddTask(props) {
     const [task, setTask] = useState("");
+    const {setReloadTasks} = props;
 
     const onSubmit= (e) => {
         e.preventDefault();
         if(!isEmpty(task)) {
-
+          db.collection("tasks").add({
+            name: task,
+            completed: false,
+          }).then(() =>{
+            setTask("");
+            setReloadTasks(true);
+          });
         }
 
     }
 
-    console.log(task);
   return (
     <Form onSubmit={onSubmit} className="add-task">
-        <input type="text" placeholder="Nueva tarea......" onChange={(e) => setTask(e.target.value)}/>
+        <input type="text" placeholder="Nueva tarea......" onChange={(e) => setTask(e.target.value)} value={task}/>
         <Button type="submit" >
             <Send/>
         </Button>
